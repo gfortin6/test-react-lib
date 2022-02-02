@@ -5,7 +5,7 @@ interface HeaderProps {
   text: string;
   cssClass?: string;
 }
-export const Header: React.FC<HeaderProps>  = (props)=>{
+export const Header = (props:HeaderProps)=>{
   let result;
   switch (props.level) {
     case '1':
