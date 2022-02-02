@@ -6,7 +6,8 @@
     "rollup": "rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "author": "Guillaume Fortin",
   "license": "ISC",
@@ -35,6 +36,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
     "eslint": "^8.8.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
