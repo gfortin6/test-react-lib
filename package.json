@@ -68,12 +68,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": [
-        "npx --no-install lint-staged"
-      ],
-      "pre-push": [
-        "CI=true npm test"
-      ]
+      "pre-commit": "lint-staged",
+      "pre-push": "CI=true npm test"
     }
   },
   "lint-staged": {
