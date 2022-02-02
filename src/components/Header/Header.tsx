@@ -5,7 +5,7 @@ interface HeaderProps {
   text: string;
   cssClass?: string;
 }
-export const Header = (props:HeaderProps)=>{
+const Header = (props:HeaderProps)=>{
   let result;
   switch (props.level) {
     case '1':
@@ -32,4 +32,4 @@ export const Header = (props:HeaderProps)=>{
   return result;
 };
 
-// export default Header;
+export default Header;
