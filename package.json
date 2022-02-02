@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "ADS React component Library",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "build": "rollup -c"
   },
   "author": "Guillaume Fortin",
   "license": "ISC",
