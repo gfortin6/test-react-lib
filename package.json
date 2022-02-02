@@ -8,8 +8,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "lint": "eslint --fix"
-
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "prettier:fix": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "lint-staged": "lint-staged .",
+    "prettier-watch": "onchange '**/*.tsx' -- prettier --write {{changed}}"
   },
   "author": "Guillaume Fortin",
   "license": "ISC",
@@ -62,5 +65,22 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/gfortin6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ],
+      "pre-push": [
+        "CI=true npm test"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,}": [
+      "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
   }
 }

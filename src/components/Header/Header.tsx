@@ -5,7 +5,7 @@ interface HeaderProps {
   text: string;
   cssClass?: string;
 }
-const Header = (props:HeaderProps)=>{
+const Header: React.FC<HeaderProps> = (props) => {
   let result;
   switch (props.level) {
     case '1':

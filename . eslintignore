@@ -3,3 +3,4 @@ src/**/__tests__/**
 src/react-app-env.d.ts
 node/*
 build/*
+/dist/*
