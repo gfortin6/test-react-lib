@@ -6,7 +6,7 @@ export interface HeaderProps {
   cssClass?: string;
 }
 
-export const Header: React.FC<HeaderProps> = (props) => {
+const Header: React.FC<HeaderProps> = (props) => {
   let result;
   switch (props.level) {
     case '1':
@@ -32,3 +32,4 @@ export const Header: React.FC<HeaderProps> = (props) => {
   }
   return result;
 };
+export default Header;

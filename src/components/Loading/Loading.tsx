@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import '../../styles/component/loading.scss';
 
-export const Loading: React.FC = () => {
+const Loading: React.FC = () => {
   return (
     <div className="loading-container">
       <Spinner animation="border" role="status">
@@ -11,3 +11,4 @@ export const Loading: React.FC = () => {
     </div>
   );
 };
+export default Loading;
