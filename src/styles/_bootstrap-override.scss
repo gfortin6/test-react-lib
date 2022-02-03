@@ -2,7 +2,7 @@
 @use 'vars/fonts';
 @use 'vars/colors';
 
-$primary: colors.$orange-ADS;
+$primary: colors.$primary;
 
 .btn-primary {
   color: colors.$white !important;

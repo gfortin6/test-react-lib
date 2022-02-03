@@ -1,5 +1,6 @@
 @use '../vars/fonts';
 @use '../vars/typography';
+@use '../bootstrap-override';
 
 .error-code {
   font-family: fonts.$title-bold;
