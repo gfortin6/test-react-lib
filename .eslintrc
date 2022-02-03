@@ -48,8 +48,5 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": [
-    "src/**/*.test.[ts|tsx]",
-    "/dist/*"
-  ]
+  "ignorePatterns": ["src/**/*.test.[ts|tsx]", "/dist/*", "*.config.*"]
 }

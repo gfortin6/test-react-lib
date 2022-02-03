@@ -1,0 +1,12 @@
+@use '../vars/fonts';
+@use '../vars/typography';
+
+.error-code {
+  font-family: fonts.$title-bold;
+  font-size: 10rem;
+  text-align: center;
+}
+.error-text {
+  margin-top: 4rem;
+  text-align: center;
+}

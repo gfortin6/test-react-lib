@@ -1,0 +1,48 @@
+// Fonts
+@use '../vars/fonts';
+@use '../vars/typography';
+@use '..//vars/colors';
+
+//Headings
+h1,
+.h1 {
+  font-family: fonts.$title-medium;
+  font-size: 32px;
+  text-shadow: 0px 3px 6px colors.$shadow-color;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+h2,
+.h2 {
+  font-family: fonts.$title-medium;
+  font-size: 21px;
+  text-shadow: 0px 3px 6px colors.$shadow-color;
+  margin-bottom: 2rem;
+}
+
+h3,
+.h3 {
+  font-family: fonts.$text-bold;
+  font-size: 21px;
+  line-height: 21px;
+  margin-bottom: 2rem;
+}
+
+h4,
+.h4 {
+  font-family: fonts.$title-bold;
+  font-size: 18px;
+}
+
+h5,
+.h5 {
+  font-family: fonts.$title-regular;
+  font-size: 14px;
+}
+
+h6,
+.h6 {
+  font-family: fonts.$title-regular;
+  font-size: 12px;
+}

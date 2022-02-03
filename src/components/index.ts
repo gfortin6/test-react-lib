@@ -1,2 +1,3 @@
-export { default as Button } from './Button/Button';
-export { default as Header } from './Header/Header';
+export { Footer } from './Footer/Footer';
+export { Header } from './Header/Header';
+export { Loading } from './Loading/Loading';

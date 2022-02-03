@@ -1,0 +1,96 @@
+// Fonts
+@use 'vars/fonts';
+@use 'vars/colors';
+
+body {
+  overflow: hidden;
+  font-family: fonts.$text-regular;
+}
+main {
+  margin-left: 0;
+  margin-right: 0;
+}
+.success {
+  color: colors.$green;
+}
+.error {
+  color: colors.$red;
+}
+.warning {
+  color: colors.$yellow;
+}
+
+.btn-sm {
+  padding: 0rem 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.bgDark {
+  background-color: colors.$dark-grey;
+}
+
+.bgDark span,
+.bgDark a {
+  color: colors.$white;
+}
+.flex-container {
+  display: flex;
+}
+
+.min-height {
+  min-height: 5em !important;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.dropdown-menu {
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.flex-align-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.text-bold {
+  font-family: fonts.$text-bold;
+}
+
+.vertical-separator {
+  border-left: 1px solid colors.$light-grey;
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.toggle-min-height {
+  min-height: 2.25em;
+}
+
+.badge {
+  min-width: 75px;
+  min-height: 1em;
+  font-size: 1em;
+}
+.badge:hover {
+  background-color: colors.$light-grey !important;
+}
+.clickable {
+  cursor: pointer;
+}
+
+.page-item.active .page-link {
+  z-index: 0;
+}
+
+@media only screen and (max-width: 772px) {
+  .vertical-separator {
+    border-left: none;
+    margin-top: 1em;
+  }
+}

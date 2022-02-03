@@ -1,0 +1,17 @@
+// Fonts
+@use 'vars/fonts';
+@use 'vars/colors';
+
+$primary: colors.$orange-ADS;
+
+.btn-primary {
+  color: colors.$white !important;
+}
+
+.dropdown-toggle:disabled {
+  background-color: colors.$gray-disabled !important;
+  border: 1px solid colors.$gray-disabled-border !important;
+  opacity: 100% !important;
+}
+
+@import '~bootstrap/scss/bootstrap';

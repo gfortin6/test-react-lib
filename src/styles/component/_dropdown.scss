@@ -1,0 +1,42 @@
+@use '../vars/colors';
+
+.dropdown-button .dropdown-toggle {
+  width: 100%;
+  border-color: #ced4da;
+  background-color: transparent;
+  color: colors.$dark-grey !important;
+}
+.dropdown-button .dropdown-toggle:hover,
+.dropdown-button .dropdown-toggle:active,
+.dropdown-button .dropdown-toggle:focus,
+.dropdown-button .show > .btn-primary.dropdown-toggle,
+.button .show > .btn-primary.dropdown-toggle,
+.btn-primary.dropdown-toggle:focus {
+  background-color: transparent !important;
+  border-color: #ced4da !important;
+  box-shadow: 0 0 0 0.25rem rgb(211 121 15 / 25%);
+}
+
+.dropdown-button .dropdown-toggle:disabled {
+  opacity: 1 !important;
+  color: colors.$dark-grey !important;
+}
+
+.dropdown-button button {
+  text-align: start;
+}
+
+.dropdown-error-message {
+  color: colors.$red;
+  font-size: 0.875em;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.dropdown-invalid .dropdown-toggle {
+  border-color: colors.$red;
+}
+
+.dropdown-flag {
+  padding-right: 0.5em;
+}

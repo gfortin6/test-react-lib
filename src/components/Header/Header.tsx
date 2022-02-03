@@ -1,11 +1,12 @@
 import React from 'react';
-
-interface HeaderProps {
+import '../../styles/component/header.scss';
+export interface HeaderProps {
   level: string;
   text: string;
   cssClass?: string;
 }
-const Header: React.FC<HeaderProps> = (props) => {
+
+export const Header: React.FC<HeaderProps> = (props) => {
   let result;
   switch (props.level) {
     case '1':
@@ -31,5 +32,3 @@ const Header: React.FC<HeaderProps> = (props) => {
   }
   return result;
 };
-
-export default Header;
