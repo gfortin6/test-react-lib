@@ -106,7 +106,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "preserveConstEnums": true,
-    "include": ["src/components", "src/enums", "src/custom.d.ts"]
+    "preserveConstEnums": true
+    // "include": ["src/components", "src/enums", "src/custom.d.ts"]
   }
 }

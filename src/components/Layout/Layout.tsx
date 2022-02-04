@@ -1,10 +1,12 @@
 import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import { TopNavBar } from '..';
 import { UIVariant } from '../../enums/UIVariant';
 import '../../styles/component/layout.scss';
 import Footer from '../Footer/Footer';
 import Loading from '../Loading/Loading';
 import Toast from '../Toast/Toast';
+import { TopNavBarProps } from '../TopNavBar/TopNavBar';
 
 export interface LayoutProps {
   isLoading: boolean;
@@ -12,20 +14,14 @@ export interface LayoutProps {
   alertHeader: string;
   alertMessage?: string | undefined;
   alertVariant: UIVariant;
+  topNavBar: TopNavBarProps;
 }
 
-const Layout: React.FC<LayoutProps> = ({
-  isLoading,
-  isAlertToShow,
-  alertHeader,
-  alertMessage,
-  alertVariant,
-  children,
-}) => {
-  if (isAlertToShow && alertHeader !== '') {
+const Layout: React.FC<LayoutProps> = (props) => {
+  if (props.isAlertToShow) {
     // dispatch(handleDisableAlertAction());
-    const toastComponent = <Toast toastTitle={alertHeader} toastBody={alertMessage} />;
-    switch (alertVariant) {
+    const toastComponent = <Toast toastTitle={props.alertHeader} toastBody={props.alertMessage} />;
+    switch (props.alertVariant) {
       case UIVariant.SUCCESS:
         toast.success(toastComponent, {
           toastId: 'successToast',
@@ -65,12 +61,16 @@ const Layout: React.FC<LayoutProps> = ({
 
   return (
     <>
-      {/* <TopNavBar /> */}
+      <TopNavBar
+        appName={props.topNavBar.appName}
+        apiVersion={props.topNavBar.apiVersion}
+        uiVersion={props.topNavBar.uiVersion}
+      />
 
       <ToastContainer position="top-left" autoClose={false} newestOnTop={false} closeOnClick rtl={false} draggable />
-      {isLoading && <Loading />}
+      {props.isLoading && <Loading />}
 
-      <main>{children}</main>
+      <main>{props.children}</main>
       <Footer />
     </>
   );
