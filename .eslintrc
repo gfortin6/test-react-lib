@@ -1,5 +1,6 @@
 {
   "env": {
+    "node": true,
     "browser": true,
     "es2021": true
   },
@@ -48,5 +49,5 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["src/**/*.test.[ts|tsx]", "/dist/*", "*.config.*"]
+  "ignorePatterns": ["src/**/*.test.[ts|tsx]", "/dist/*", "*.config.*", "*.d.*"]
 }

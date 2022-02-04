@@ -1,0 +1,32 @@
+@use '../vars/colors';
+@import '../base';
+
+.navigation-version {
+  font-size: 0.65em;
+  color: colors.$white;
+  text-align: right;
+}
+.logoutLink {
+  color: colors.$white !important;
+}
+.logoutImage {
+  margin-right: 0.5em;
+  margin-top: -4px;
+}
+.navTop {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.btn-toggle-side-menu {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 576px) {
+  .btn-toggle-side-menu {
+    visibility: visible;
+    font-size: 1.25em;
+    color: colors.$white;
+    margin-right: 1em;
+  }
+}

@@ -1,6 +1,6 @@
 // Fonts
-@use 'vars/fonts';
-@use 'vars/colors';
+@use './vars/fonts';
+@use './vars/colors';
 
 body {
   overflow: hidden;
@@ -11,13 +11,13 @@ main {
   margin-right: 0;
 }
 .success {
-  color: colors.$green;
+  color: colors.$success;
 }
 .error {
-  color: colors.$red;
+  color: colors.$danger;
 }
 .warning {
-  color: colors.$yellow;
+  color: colors.$warning;
 }
 
 .btn-sm {

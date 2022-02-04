@@ -1,6 +1,6 @@
 {
   "name": "@gfortin6/test-react-lib",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "ADS React component Library",
   "scripts": {
     "rollup": "rollup -c",
@@ -50,6 +50,7 @@
     "jest": "^27.4.7",
     "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
+    "react-icons": "^4.3.1",
     "rollup": "^2.67.0",
     "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -58,7 +59,11 @@
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "@types/react-router-bootstrap": "^0.24.5",
+    "@types/react-router-dom": "^5.3.1",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.3.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -81,6 +86,5 @@
       "prettier --write"
     ],
     "*.{json,css,md}": "prettier --write"
-  },
-  "dependencies": {}
+  }
 }
