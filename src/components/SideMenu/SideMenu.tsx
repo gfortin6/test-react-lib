@@ -3,12 +3,11 @@ import React, { ReactNode } from 'react';
 import { FiArrowLeftCircle, FiArrowRightCircle, FiLogOut } from 'react-icons/fi';
 import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
+import '../../styles/component/side-menu.scss';
 import Footer from '../Footer/Footer';
-
 export interface SideMenuProps {
   isCollapsed: boolean;
   isToggled: boolean;
-  isLoggedIn: boolean;
   menuItems: MenuItem[];
   onLoggedOut: () => void;
 }
@@ -80,22 +79,33 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
             <Menu iconShape="square">
               {props.menuItems.map((menuItem: MenuItem) => {
                 if (menuItem.subMenuItems.length > 0) {
-                  <SubMenu title={menuItem.name} id={`${menuItem.name}-menu`} icon={menuItem.icon}>
-                    {menuItem.subMenuItems.map((subMenuItem: MenuItem) => {
-                      {
-                        isAuthorized([subMenuItem.link]) && (
-                          <MenuItem icon={subMenuItem.icon}>
-                            {subMenuItem.name} <Link to={subMenuItem.link} />
-                          </MenuItem>
-                        );
-                      }
-                    })}
-                  </SubMenu>;
+                  return (
+                    <SubMenu
+                      title={menuItem.name}
+                      id={`${menuItem.name}-menu`}
+                      icon={menuItem.icon}
+                      key={`${menuItem.name}-menu`}
+                    >
+                      {menuItem.subMenuItems.map((subMenuItem: MenuItem) => {
+                        {
+                          return (
+                            isAuthorized([subMenuItem.link]) && (
+                              <MenuItem icon={subMenuItem.icon} key={`${menuItem.name}-${subMenuItem.name}-item`}>
+                                {subMenuItem.name} <Link to={subMenuItem.link} />
+                              </MenuItem>
+                            )
+                          );
+                        }
+                      })}
+                    </SubMenu>
+                  );
                 } else {
-                  isAuthorized([menuItem.link]) && (
-                    <MenuItem icon={menuItem.icon}>
+                  return (
+                    // isAuthorized([menuItem.link]) && (
+                    <MenuItem icon={menuItem.icon} key={`${menuItem.name}-item`}>
                       {menuItem.name} <Link to={menuItem.link} />
                     </MenuItem>
+                    // )
                   );
                 }
               })}
@@ -114,13 +124,10 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
                 </SubMenu>
               )} */}
 
-              {props.isLoggedIn && (
-                <MenuItem icon={<FiLogOut />} onClick={handleLogout}>
-                  Logout
-                </MenuItem>
-              )}
-              {/* <Footer isMenuCollapsed={isCollapsed} /> */}
-              <Footer />
+              <MenuItem icon={<FiLogOut />} onClick={handleLogout}>
+                Logout
+              </MenuItem>
+              <Footer isMenuCollapsed={props.isCollapsed} />
             </Menu>
           </SidebarFooter>
         </ProSidebar>

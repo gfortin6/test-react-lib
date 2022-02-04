@@ -1,12 +1,28 @@
 import React from 'react';
 import '../../styles/component/footer.scss';
 
-const Footer: React.FC = () => {
+export interface FooterProps {
+  isMenuCollapsed: boolean;
+}
+
+const Footer: React.FC<FooterProps> = (props) => {
   return (
     <footer>
-      <hr />
-      <p className="text-center footer-copyright">© Automotive Data Solutions.</p>
-      <p className="text-center footer-copyright">All Rights Reserved. 2021</p>
+      <div>
+        <hr />
+        {props.isMenuCollapsed && (
+          <>
+            <p className="text-center footer-copyright">© ADS</p>
+            <p className="text-center footer-copyright">2021</p>
+          </>
+        )}
+        {!props.isMenuCollapsed && (
+          <>
+            <p className="text-center footer-copyright">© Automotive Data Solutions.</p>
+            <p className="text-center footer-copyright">All Rights Reserved. 2021</p>
+          </>
+        )}
+      </div>
     </footer>
   );
 };

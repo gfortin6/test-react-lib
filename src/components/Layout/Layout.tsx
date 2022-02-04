@@ -19,6 +19,7 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = (props) => {
   if (props.isAlertToShow) {
+    // dispatch(handleDisableAlertAction());
     const toastComponent = <Toast toastTitle={props.alertHeader} toastBody={props.alertMessage} />;
     switch (props.alertVariant) {
       case UIVariant.SUCCESS:
@@ -70,7 +71,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       {props.isLoading && <Loading />}
 
       <main>{props.children}</main>
-      <Footer />
+      <Footer isMenuCollapsed={false} />
     </>
   );
 };
