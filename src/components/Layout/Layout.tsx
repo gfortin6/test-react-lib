@@ -19,7 +19,6 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = (props) => {
   if (props.isAlertToShow) {
-    // dispatch(handleDisableAlertAction());
     const toastComponent = <Toast toastTitle={props.alertHeader} toastBody={props.alertMessage} />;
     switch (props.alertVariant) {
       case UIVariant.SUCCESS:
