@@ -112,16 +112,6 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
-              {/* {isAuthorized([UIPath.ACL_MANAGEMENT]) && (
-                <SubMenu title="Admin" icon={<MdAdminPanelSettings />}>
-                  {isAuthorized([UIPath.ACL_MANAGEMENT]) && (
-                    <MenuItem active={true} icon={<FiUsers />}>
-                      ACL
-                      <Link to={UIPath.ACL_MANAGEMENT} />
-                    </MenuItem>
-                  )}
-                </SubMenu>
-              )} */}
               <MenuItem icon={<BsBackspace />}>
                 Back to portal <ExternalLink href={props.portalURL} />
               </MenuItem>
