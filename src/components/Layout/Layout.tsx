@@ -10,14 +10,13 @@ import Toast from '../Toast/Toast';
 import { TopNavBarProps } from '../TopNavBar/TopNavBar';
 
 export interface LayoutProps {
-  hasSideMenu: boolean;
   isLoading: boolean;
   isAlertToShow: boolean;
   alertHeader: string;
   alertMessage?: string | undefined;
   alertVariant: UIVariant;
   topNavBar: TopNavBarProps;
-  sideMenu: SideMenuProps;
+  sideMenu?: SideMenuProps;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -74,25 +73,19 @@ const Layout: React.FC<LayoutProps> = (props) => {
       {props.isLoading && <Loading />}
 
       <main>
-        {!props.hasSideMenu && props.children}
-        {props.hasSideMenu && (
+        {!props.sideMenu && props.children}
+        {props.sideMenu && (
           <div className="layout-container">
             <div className="layout-content-left">
               <SideMenu
-                portalURL={''}
-                isCollapsed={false}
-                isToggled={false}
-                allowedPages={[]}
-                menuItems={[]}
-                onLoggedOut={function (): void {
-                  throw new Error('Function not implemented.');
-                }}
-                onToggleChange={function (): void {
-                  throw new Error('Function not implemented.');
-                }}
-                onCollapseChange={function (): void {
-                  throw new Error('Function not implemented.');
-                }}
+                portalURL={props.sideMenu.portalURL}
+                isCollapsed={props.sideMenu.isCollapsed}
+                isToggled={props.sideMenu.isToggled}
+                allowedPages={props.sideMenu.allowedPages}
+                menuItems={props.sideMenu.menuItems}
+                onLoggedOut={props.sideMenu.onLoggedOut}
+                onToggleChange={props.sideMenu.onToggleChange}
+                onCollapseChange={props.sideMenu.onCollapseChange}
               />
             </div>
             <div className="layout-content-right">{props.children}</div>

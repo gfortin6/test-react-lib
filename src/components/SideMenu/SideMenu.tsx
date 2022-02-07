@@ -38,8 +38,6 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
     props.onCollapseChange();
   }
 
-  // function handleBackToPortal() {}
-
   function isAuthorized(allowedPages: string[], validatePage: string[]) {
     let isUserAuthorized = false;
     if (!allowedPages || allowedPages.length === 0) {
