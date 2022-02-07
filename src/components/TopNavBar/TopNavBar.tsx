@@ -13,12 +13,14 @@ export interface TopNavBarProps {
   appName: string;
   apiVersion?: string;
   uiVersion: string;
-  onToggleClicked: () => void;
+  onToggleClicked?: (() => void) | undefined;
 }
 
 const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   function handleSideMenuToggle() {
-    props.onToggleClicked();
+    if (props.onToggleClicked !== undefined) {
+      props.onToggleClicked();
+    }
   }
 
   return (

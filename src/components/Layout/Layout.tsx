@@ -9,17 +9,18 @@ import Toast from '../Toast/Toast';
 import { TopNavBarProps } from '../TopNavBar/TopNavBar';
 
 export interface LayoutProps {
+  hasSideMenu: boolean;
   isLoading: boolean;
   isAlertToShow: boolean;
   alertHeader: string;
   alertMessage?: string | undefined;
   alertVariant: UIVariant;
   topNavBar: TopNavBarProps;
+  onMenuToggle?: (() => void) | undefined;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
   if (props.isAlertToShow) {
-    // dispatch(handleDisableAlertAction());
     const toastComponent = <Toast toastTitle={props.alertHeader} toastBody={props.alertMessage} />;
     switch (props.alertVariant) {
       case UIVariant.SUCCESS:
@@ -65,6 +66,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         appName={props.topNavBar.appName}
         apiVersion={props.topNavBar.apiVersion}
         uiVersion={props.topNavBar.uiVersion}
+        onToggleClicked={props.onMenuToggle}
       />
 
       <ToastContainer position="top-left" autoClose={false} newestOnTop={false} closeOnClick rtl={false} draggable />
