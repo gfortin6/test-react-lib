@@ -76,30 +76,30 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
           <SidebarContent>
             <Menu iconShape="square">
               {props.menuItems.map((menuItem: MenuItem) => {
-                if (menuItem.subMenuItems && menuItem.subMenuItems.length > 0) {
-                  return (
-                    <SubMenu
-                      title={menuItem.name}
-                      id={`${menuItem.name}-menu`}
-                      icon={menuItem.icon}
-                      key={`${menuItem.name}-menu`}
-                    >
-                      {menuItem.subMenuItems.map((subMenuItem: MenuItem) => {
-                        if (
-                          menuItem.allowedSubMenuPages &&
-                          isAuthorized(menuItem.allowedSubMenuPages, [subMenuItem.link])
-                        ) {
-                          return (
-                            <MenuItem icon={subMenuItem.icon} key={`${menuItem.name}-${subMenuItem.name}-item`}>
-                              {subMenuItem.name} <Link to={subMenuItem.link} />
-                            </MenuItem>
-                          );
-                        }
-                      })}
-                    </SubMenu>
-                  );
-                } else {
-                  if (isAuthorized(props.allowedPages, [menuItem.link])) {
+                if (isAuthorized(props.allowedPages, [menuItem.link])) {
+                  if (menuItem.subMenuItems && menuItem.subMenuItems.length > 0) {
+                    return (
+                      <SubMenu
+                        title={menuItem.name}
+                        id={`${menuItem.name}-menu`}
+                        icon={menuItem.icon}
+                        key={`${menuItem.name}-menu`}
+                      >
+                        {menuItem.subMenuItems.map((subMenuItem: MenuItem) => {
+                          if (
+                            menuItem.allowedSubMenuPages &&
+                            isAuthorized(menuItem.allowedSubMenuPages, [subMenuItem.link])
+                          ) {
+                            return (
+                              <MenuItem icon={subMenuItem.icon} key={`${menuItem.name}-${subMenuItem.name}-item`}>
+                                {subMenuItem.name} <Link to={subMenuItem.link} />
+                              </MenuItem>
+                            );
+                          }
+                        })}
+                      </SubMenu>
+                    );
+                  } else {
                     return (
                       <MenuItem icon={menuItem.icon} key={`${menuItem.name}-item`}>
                         {menuItem.name} <Link to={menuItem.link} />
