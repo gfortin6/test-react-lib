@@ -3,6 +3,7 @@
 // import { HealthResponse } from 'interfaces/response/HealthResponse';
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { CgMenuGridR } from 'react-icons/cg';
 import { LinkContainer } from 'react-router-bootstrap';
 import ADSLogo from '../../images/ADSLogo.svg';
 import '../../styles/component/top-nav-bar.scss';
@@ -12,29 +13,13 @@ export interface TopNavBarProps {
   appName: string;
   apiVersion?: string;
   uiVersion: string;
-  // onGoHome: () => void;
+  onToggleClicked: () => void;
 }
 
 const TopNavBar: React.FC<TopNavBarProps> = (props) => {
-  // const [apiHealth, setApiHealth] = useState<HealthResponse>();
-  // const dispatch = useAppDispatch();
-  // const { sendRequest: fetchApiVersion } = useAxios();
-
-  // useEffect(() => {
-  //   fetchApiVersion({ config: { url: ApiPath.HEALTH }, applyData: setApiHealth });
-  // }, []);
-
-  // useEffect(() => {
-  //   if (apiHealth) {
-  //     dispatch(handleServerDownErrorAction(false));
-  //   } else {
-  //     dispatch(handleServerDownErrorAction(true));
-  //   }
-  // }, [apiHealth]);
-
-  // function handleSideMenuToggle() {
-  //   dispatch(handleToggleChangeAction());
-  // }
+  function handleSideMenuToggle() {
+    props.onToggleClicked();
+  }
 
   return (
     <header>
@@ -53,9 +38,9 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
           <Nav>
             <Navbar.Text>
               <div className="flex-container">
-                {/* <div className="btn-toggle-side-menu" onClick={}>
+                <div className="btn-toggle-side-menu" onClick={handleSideMenuToggle}>
                   <CgMenuGridR />
-                </div> */}
+                </div>
 
                 <div className="navigation-version">
                   <div> {props.apiVersion && `API : v.${props.apiVersion}`}</div>

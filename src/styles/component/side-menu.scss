@@ -64,9 +64,6 @@
   padding: 5px;
   font-size: 18px !important;
 }
-.flexbox {
-  flex: 0 0 25em;
-}
 
 .pro-sidebar > .pro-sidebar-inner {
   background-color: colors.$dark-grey !important;
@@ -74,10 +71,6 @@
 
 .pro-inner-item :hover {
   color: colors.$primary !important;
-}
-
-.popper-inner {
-  margin-top: 58%;
 }
 
 @media only screen and (max-width: 720px) {

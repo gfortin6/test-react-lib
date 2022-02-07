@@ -1,6 +1,6 @@
 {
   "name": "@gfortin6/test-react-lib",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "ADS React component Library",
   "scripts": {
     "rollup": "rollup -c",
@@ -64,7 +64,10 @@
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "@storybook/addon-viewport": "^6.4.18",
+    "react-external-link": "^1.2.2",
+    "rollup-plugin-svg": "^2.0.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -87,8 +90,5 @@
       "prettier --write"
     ],
     "*.{json,css,md}": "prettier --write"
-  },
-  "dependencies": {
-    "rollup-plugin-svg": "^2.0.0"
   }
 }

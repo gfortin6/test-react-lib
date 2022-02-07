@@ -7,9 +7,11 @@ import SideMenu from '../SideMenu/SideMenu';
 export default {
   title: 'SideMenu',
   component: SideMenu,
+  portalURL: 'http://www.google.ca',
   isCollapsed: false,
   isToggled: false,
   isLoggedIn: false,
+  allowedPages: ['/', '/1'],
   menuItems: [],
 } as ComponentMeta<typeof SideMenu>;
 
@@ -21,43 +23,89 @@ const Template: ComponentStory<typeof SideMenu> = (args) => (
 
 export const MenuOpen = Template.bind({});
 MenuOpen.args = {
+  portalURL: 'http://www.google.ca',
   isCollapsed: false,
   isToggled: false,
-  menuItems: [{ link: '/1', name: 'test Link 2', icon: <FiLogOut />, subMenuItems: [] }],
+  allowedPages: ['/'],
+  menuItems: [{ link: '/', name: 'test Link', icon: <FiLogOut /> }],
 };
 
 export const MenuOpenWithSubMenu = Template.bind({});
 MenuOpenWithSubMenu.args = {
+  portalURL: 'http://www.google.ca',
   isCollapsed: false,
   isToggled: false,
+  allowedPages: ['/', '/1'],
   menuItems: [
     {
       link: '/',
       name: 'test Link 1',
       icon: <FiArrowLeftCircle />,
-      subMenuItems: [{ link: '/', name: 'test Link 1', icon: <FiArrowLeftCircle />, subMenuItems: [] }],
+      allowedSubMenuPages: ['/s1'],
+      subMenuItems: [{ link: '/s1', name: 'sub link 1', icon: <FiArrowLeftCircle /> }],
     },
-    { link: '/1', name: 'test Link 2', icon: <FiLogOut />, subMenuItems: [] },
+    { link: '/1', name: 'test Link 2', icon: <FiLogOut /> },
+  ],
+};
+
+export const MenuOpenWithNotAuthorized = Template.bind({});
+MenuOpenWithNotAuthorized.args = {
+  portalURL: 'http://www.google.ca',
+  isCollapsed: false,
+  isToggled: false,
+  allowedPages: ['/', '/1'],
+  menuItems: [
+    { link: '/', name: 'link auth 1', icon: <FiLogOut /> },
+    { link: '/1', name: 'link auth 2', icon: <FiLogOut /> },
+    { link: '/2', name: 'link not auth', icon: <FiLogOut /> },
+  ],
+};
+
+export const MenuOpenWithSubMenuNotAuthorized = Template.bind({});
+MenuOpenWithSubMenuNotAuthorized.args = {
+  portalURL: 'http://www.google.ca',
+  isCollapsed: false,
+  isToggled: false,
+  allowedPages: ['/', '/1', '/2'],
+  menuItems: [
+    { link: '/', name: 'link auth 1', icon: <FiLogOut /> },
+    { link: '/1', name: 'link auth 2', icon: <FiLogOut /> },
+    {
+      link: '/2',
+      name: 'with sublink',
+      icon: <FiArrowLeftCircle />,
+      allowedSubMenuPages: ['/s1'],
+      subMenuItems: [
+        { link: '/s1', name: 'sub link 1 auth', icon: <FiArrowLeftCircle /> },
+        { link: '/s2', name: 'sub link 2 not aut', icon: <FiArrowLeftCircle /> },
+      ],
+    },
   ],
 };
 
 export const MenuCollapsed = Template.bind({});
 MenuCollapsed.args = {
+  portalURL: 'http://www.google.ca',
   isCollapsed: true,
   isToggled: false,
-  menuItems: [{ link: '/1', name: 'test Link 2', icon: <FiLogOut />, subMenuItems: [] }],
+  allowedPages: ['/', '/1'],
+  menuItems: [{ link: '/', name: 'test Link', icon: <FiLogOut /> }],
 };
+
 export const MenuCollapsedWithSubMenu = Template.bind({});
 MenuCollapsedWithSubMenu.args = {
+  portalURL: 'http://www.google.ca',
   isCollapsed: true,
   isToggled: false,
+  allowedPages: ['/', '/1'],
   menuItems: [
     {
       link: '/',
       name: 'test Link 1',
       icon: <FiArrowLeftCircle />,
-      subMenuItems: [{ link: '/', name: 'test Link 1', icon: <FiArrowLeftCircle />, subMenuItems: [] }],
+      allowedSubMenuPages: ['/s1'],
+      subMenuItems: [{ link: '/s1', name: 'sub link 1', icon: <FiArrowLeftCircle /> }],
     },
-    { link: '/1', name: 'test Link 2', icon: <FiLogOut />, subMenuItems: [] },
+    { link: '/1', name: 'test Link 2', icon: <FiLogOut /> },
   ],
 };
