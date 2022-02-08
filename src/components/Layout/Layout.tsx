@@ -14,21 +14,6 @@ export interface LayoutProps {
   alertHeader: string;
   alertMessage?: string | undefined;
   alertVariant: UIVariant;
-
-  // appName: string;
-  // apiVersion?: string;
-  // uiVersion: string;
-  // onToggleClicked?: (() => void) | undefined;
-
-  // portalURL: string;
-  // isCollapsed: boolean;
-  // isToggled: boolean;
-  // allowedPages: string[];
-  // menuItems: MenuItem[];
-  // onLoggedOut: () => void;
-  // onToggleChange: () => void;
-  // onCollapseChange: () => void;
-
   topNavBar: TopNavBarProps;
   sideMenu?: SideMenuProps;
 }
@@ -100,6 +85,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 onLoggedOut={props.sideMenu.onLoggedOut}
                 onToggleChange={props.sideMenu.onToggleChange}
                 onCollapseChange={props.sideMenu.onCollapseChange}
+                onLinkClicked={props.sideMenu.onLinkClicked}
               />
             </div>
             <div className="layout-content-right">{props.children}</div>

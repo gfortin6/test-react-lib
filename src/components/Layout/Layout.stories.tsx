@@ -76,6 +76,7 @@ WithSideBar.args = {
         ],
       },
     ],
+    onLinkClicked: () => {},
     onToggleChange: () => {},
     onCollapseChange: () => {},
     onLoggedOut: () => {},

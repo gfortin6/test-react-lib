@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { FiArrowLeftCircle, FiLogOut } from 'react-icons/fi';
@@ -13,6 +14,10 @@ export default {
   isLoggedIn: false,
   allowedPages: ['/', '/1'],
   menuItems: [],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 } as ComponentMeta<typeof SideMenu>;
 
 const Template: ComponentStory<typeof SideMenu> = (args) => (
@@ -28,6 +33,10 @@ MenuOpen.args = {
   isToggled: false,
   allowedPages: ['/'],
   menuItems: [{ link: '/', name: 'test Link', icon: <FiLogOut /> }],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };
 
 export const MenuOpenWithSubMenu = Template.bind({});
@@ -46,6 +55,10 @@ MenuOpenWithSubMenu.args = {
     },
     { link: '/1', name: 'test Link 2', icon: <FiLogOut /> },
   ],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };
 
 export const MenuOpenWithNotAuthorized = Template.bind({});
@@ -59,6 +72,10 @@ MenuOpenWithNotAuthorized.args = {
     { link: '/1', name: 'link auth 2', icon: <FiLogOut /> },
     { link: '/2', name: 'link not auth', icon: <FiLogOut /> },
   ],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };
 
 export const MenuOpenWithSubMenuNotAuthorized = Template.bind({});
@@ -81,6 +98,10 @@ MenuOpenWithSubMenuNotAuthorized.args = {
       ],
     },
   ],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };
 
 export const MenuCollapsed = Template.bind({});
@@ -90,6 +111,10 @@ MenuCollapsed.args = {
   isToggled: false,
   allowedPages: ['/', '/1'],
   menuItems: [{ link: '/', name: 'test Link', icon: <FiLogOut /> }],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };
 
 export const MenuCollapsedWithSubMenu = Template.bind({});
@@ -108,4 +133,8 @@ MenuCollapsedWithSubMenu.args = {
     },
     { link: '/1', name: 'test Link 2', icon: <FiLogOut /> },
   ],
+  onLoggedOut: () => {},
+  onToggleChange: () => {},
+  onCollapseChange: () => {},
+  onLinkClicked: (path: string) => {},
 };

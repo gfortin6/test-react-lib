@@ -9,5 +9,6 @@ interface SideMenuProps {
   onLoggedOut: () => void;
   onToggleChange: () => void;
   onCollapseChange: () => void;
+  onLinkClicked: (path: string) => void;
 }
 export default SideMenuProps;

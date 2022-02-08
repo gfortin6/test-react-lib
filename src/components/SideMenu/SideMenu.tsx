@@ -1,15 +1,19 @@
 // import { UIPath } from 'enums/UIPath';
 import React from 'react';
+import { ExternalLink } from 'react-external-link';
 import { BsBackspace } from 'react-icons/bs';
 import { FiArrowLeftCircle, FiArrowRightCircle, FiLogOut } from 'react-icons/fi';
 import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu } from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
 import '../../styles/component/side-menu.scss';
 import Footer from '../Footer/Footer';
 import MenuItemProps from './MenuItemProps';
 import SideMenuProps from './SideMenuProps';
 
 const SideMenu: React.FC<SideMenuProps> = (props) => {
+  function handleLinkClicked(event: React.MouseEvent<HTMLLIElement>) {
+    props.onLinkClicked(event.currentTarget.id);
+  }
+
   function handleLogout() {
     props.onLoggedOut();
   }
@@ -72,8 +76,13 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
                             isAuthorized(menuItem.allowedSubMenuPages, [subMenuItem.link])
                           ) {
                             return (
-                              <MenuItem icon={subMenuItem.icon} key={`${menuItem.name}-${subMenuItem.name}-item`}>
-                                {subMenuItem.name} <Link to={subMenuItem.link} />
+                              <MenuItem
+                                icon={subMenuItem.icon}
+                                key={`${menuItem.name}-${subMenuItem.name}-item`}
+                                id={subMenuItem.link}
+                                onClick={handleLinkClicked}
+                              >
+                                {subMenuItem.name}
                               </MenuItem>
                             );
                           }
@@ -82,8 +91,13 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
                     );
                   } else {
                     return (
-                      <MenuItem icon={menuItem.icon} key={`${menuItem.name}-item`}>
-                        {menuItem.name} <Link to={menuItem.link} />
+                      <MenuItem
+                        icon={menuItem.icon}
+                        key={`${menuItem.name}-item`}
+                        id={menuItem.link}
+                        onClick={handleLinkClicked}
+                      >
+                        {menuItem.name}
                       </MenuItem>
                     );
                   }
@@ -95,7 +109,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
             <Menu iconShape="square">
               <MenuItem icon={<BsBackspace />}>
                 Back to portal
-                {/* <ExternalLink href={props.portalURL} /> */}
+                <ExternalLink href={props.portalURL} />
               </MenuItem>
               <MenuItem icon={<FiLogOut />} onClick={handleLogout}>
                 Logout
