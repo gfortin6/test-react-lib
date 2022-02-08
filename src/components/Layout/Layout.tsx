@@ -5,7 +5,7 @@ import { UIVariant } from '../../enums/UIVariant';
 import '../../styles/component/layout.scss';
 import Footer from '../Footer/Footer';
 import Loading from '../Loading/Loading';
-import { SideMenuProps } from '../SideMenu/SideMenu';
+import SideMenuProps from '../SideMenu/SideMenuProps';
 import Toast from '../Toast/Toast';
 
 export interface LayoutProps {
