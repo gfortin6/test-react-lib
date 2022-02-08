@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { CgMenuGridR } from 'react-icons/cg';
-import ADSLogo from '../../images/ADSLogo.svg';
 import '../../styles/component/top-nav-bar.scss';
 import Image from '../Image/Image';
 import TopNavBarProps from './TopNavBarProps';
@@ -18,7 +17,7 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
       <Navbar className="bgDark navTop">
         {/* <LinkContainer to="/"> */}
         <Navbar.Brand>
-          <Image path={ADSLogo} alt="ADS Logo" />
+          <Image path={props.brandLogo.path} alt={props.brandLogo.alt} />
         </Navbar.Brand>
         {/* </LinkContainer> */}
         <Navbar.Collapse id="responsive-navbar-nav">

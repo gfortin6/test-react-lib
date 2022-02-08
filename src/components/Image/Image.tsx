@@ -1,9 +1,5 @@
 import React from 'react';
-
-export interface ImageProps {
-  path: string;
-  alt?: string;
-}
+import ImageProps from './ImageProps';
 
 const Image: React.FC<ImageProps> = ({ path, alt }) => {
   return <img src={path} alt={alt} title={alt} />;

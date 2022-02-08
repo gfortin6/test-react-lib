@@ -61,12 +61,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
   return (
     <>
-      <TopNavBar
-        appName={props.topNavBar.appName}
-        apiVersion={props.topNavBar.apiVersion}
-        uiVersion={props.topNavBar.uiVersion}
-        onToggleClicked={props.topNavBar.onToggleClicked}
-      />
+      <TopNavBar {...props.topNavBar} />
 
       <ToastContainer position="top-left" autoClose={false} newestOnTop={false} closeOnClick rtl={false} draggable />
       {props.isLoading && <Loading />}
@@ -76,17 +71,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         {props.sideMenu && (
           <div className="layout-container">
             <div className="layout-content-left">
-              <SideMenu
-                portalURL={props.sideMenu.portalURL}
-                isCollapsed={props.sideMenu.isCollapsed}
-                isToggled={props.sideMenu.isToggled}
-                allowedPages={props.sideMenu.allowedPages}
-                menuItems={props.sideMenu.menuItems}
-                onLoggedOut={props.sideMenu.onLoggedOut}
-                onToggleChange={props.sideMenu.onToggleChange}
-                onCollapseChange={props.sideMenu.onCollapseChange}
-                onLinkClicked={props.sideMenu.onLinkClicked}
-              />
+              <SideMenu {...props.sideMenu} />
             </div>
             <div className="layout-content-right">{props.children}</div>
           </div>

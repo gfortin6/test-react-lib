@@ -4,6 +4,7 @@ import React from 'react';
 import { FiArrowLeftCircle, FiLogOut } from 'react-icons/fi';
 import { MemoryRouter } from 'react-router-dom';
 import { UIVariant } from '../../enums/UIVariant';
+import ADSLogo from '../../images/ADSLogo.svg';
 import H1 from '../Heading/Heading';
 import Layout from './Layout';
 
@@ -40,6 +41,10 @@ NoSideBar.args = {
     appName: 'test app name',
     apiVersion: '1.0.0',
     uiVersion: '1.0.0',
+    brandLogo: {
+      path: ADSLogo,
+      alt: 'ADS logo',
+    },
   },
   children: <H1 text="Layout content" level="1" />,
 };
@@ -55,6 +60,10 @@ WithSideBar.args = {
     appName: 'test App Name',
     apiVersion: '1.0.0',
     uiVersion: '1.0.1',
+    brandLogo: {
+      path: ADSLogo,
+      alt: 'ADS logo',
+    },
     onToggleClicked: () => {},
   },
   sideMenu: {
