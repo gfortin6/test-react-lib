@@ -1,20 +1,10 @@
-// import { useAppDispatch } from 'hooks/redux-hooks';
-// import useAxios from 'hooks/use-axios';
-// import { HealthResponse } from 'interfaces/response/HealthResponse';
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { CgMenuGridR } from 'react-icons/cg';
-import { LinkContainer } from 'react-router-bootstrap';
 import ADSLogo from '../../images/ADSLogo.svg';
 import '../../styles/component/top-nav-bar.scss';
 import Image from '../Image/Image';
-
-export interface TopNavBarProps {
-  appName: string;
-  apiVersion?: string;
-  uiVersion: string;
-  onToggleClicked?: (() => void) | undefined;
-}
+import TopNavBarProps from './TopNavBarProps';
 
 const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   function handleSideMenuToggle() {
@@ -26,11 +16,11 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   return (
     <header>
       <Navbar className="bgDark navTop">
-        <LinkContainer to="/">
-          <Navbar.Brand>
-            <Image path={ADSLogo} alt="ADS Logo" />
-          </Navbar.Brand>
-        </LinkContainer>
+        {/* <LinkContainer to="/"> */}
+        <Navbar.Brand>
+          <Image path={ADSLogo} alt="ADS Logo" />
+        </Navbar.Brand>
+        {/* </LinkContainer> */}
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
             <Navbar.Text>

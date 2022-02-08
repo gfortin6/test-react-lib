@@ -1,13 +1,12 @@
 import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-import { SideMenu, TopNavBar } from '..';
+import { SideMenu, TopNavBar, TopNavBarProps } from '..';
 import { UIVariant } from '../../enums/UIVariant';
 import '../../styles/component/layout.scss';
 import Footer from '../Footer/Footer';
 import Loading from '../Loading/Loading';
 import { SideMenuProps } from '../SideMenu/SideMenu';
 import Toast from '../Toast/Toast';
-import { TopNavBarProps } from '../TopNavBar/TopNavBar';
 
 export interface LayoutProps {
   isLoading: boolean;
@@ -15,6 +14,21 @@ export interface LayoutProps {
   alertHeader: string;
   alertMessage?: string | undefined;
   alertVariant: UIVariant;
+
+  // appName: string;
+  // apiVersion?: string;
+  // uiVersion: string;
+  // onToggleClicked?: (() => void) | undefined;
+
+  // portalURL: string;
+  // isCollapsed: boolean;
+  // isToggled: boolean;
+  // allowedPages: string[];
+  // menuItems: MenuItem[];
+  // onLoggedOut: () => void;
+  // onToggleChange: () => void;
+  // onCollapseChange: () => void;
+
   topNavBar: TopNavBarProps;
   sideMenu?: SideMenuProps;
 }
