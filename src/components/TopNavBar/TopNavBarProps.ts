@@ -6,6 +6,6 @@ interface TopNavBarProps {
   uiVersion: string;
   brandLogo: ImageProps;
   onToggleClicked?: (() => void) | undefined;
-  // onBackHome: () => void;
+  onBackHome: () => void;
 }
 export default TopNavBarProps;
