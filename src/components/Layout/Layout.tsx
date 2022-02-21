@@ -12,7 +12,7 @@ export interface LayoutProps {
   isLoading: boolean;
   isAlertToShow: boolean;
   alertHeader: string;
-  alertMessage?: string | undefined;
+  alertMessage: string;
   alertVariant: UIVariant;
   topNavBar: TopNavBarProps;
   sideMenu?: SideMenuProps;
