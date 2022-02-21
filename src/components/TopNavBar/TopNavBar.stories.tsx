@@ -7,9 +7,6 @@ import TopNavBar from '../TopNavBar/TopNavBar';
 export default {
   title: 'TopNavBar',
   component: TopNavBar,
-  appName: 'test App Name',
-  apiVersion: '1.0.0',
-  uiVersion: '1.0.1',
   argTypes: { onClick: { action: 'Toggle Clicked' } },
   parameters: {
     //👇 The viewports object from the Essentials addon
@@ -32,7 +29,7 @@ export const Desktop = Template.bind({});
 Desktop.args = { appName: 'test App Name', apiVersion: '1.0.0', uiVersion: '1.0.1' };
 
 export const Mobile = Template.bind({});
-Mobile.args = { appName: 'test App Name', apiVersion: '1.0.0', uiVersion: '1.0.1' };
+Mobile.args = { ...Desktop.args };
 Mobile.parameters = {
   viewport: {
     defaultViewport: 'iphonex',

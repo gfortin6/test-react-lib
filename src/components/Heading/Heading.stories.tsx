@@ -5,8 +5,6 @@ import Header from './Heading';
 export default {
   title: 'Header',
   component: Header,
-  level: 1,
-  text: 'this is a header H1',
 } as ComponentMeta<typeof Header>;
 
 const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;

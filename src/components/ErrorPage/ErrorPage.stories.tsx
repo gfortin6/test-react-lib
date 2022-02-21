@@ -5,9 +5,6 @@ import ErrorPage from './ErrorPage';
 export default {
   title: 'ErrorPage',
   component: ErrorPage,
-  code: 500,
-  errorTitle: 'Error title',
-  errorMessage: 'Error message',
 } as ComponentMeta<typeof ErrorPage>;
 
 const Template: ComponentStory<typeof ErrorPage> = (args) => <ErrorPage {...args} />;
@@ -22,7 +19,6 @@ Error500.args = {
 
 export const Error404 = Template.bind({});
 Error404.args = {
+  ...Error500.args,
   code: 404,
-  errorTitle: 'Error title',
-  errorMessage: 'Error message',
 };
