@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { CgMenuGridR } from 'react-icons/cg';
+import { LinkContainer } from 'react-router-bootstrap';
 import '../../styles/component/top-nav-bar.scss';
 import Image from '../Image/Image';
 import TopNavBarProps from './TopNavBarProps';
@@ -15,11 +16,11 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   return (
     <header>
       <Navbar className="bgDark navTop">
-        {/* <LinkContainer to="/"> */}
-        <Navbar.Brand>
-          <Image path={props.brandLogo.path} alt={props.brandLogo.alt} />
-        </Navbar.Brand>
-        {/* </LinkContainer> */}
+        <LinkContainer to="/">
+          <Navbar.Brand>
+            <Image path={props.brandLogo.path} alt={props.brandLogo.alt} />
+          </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
             <Navbar.Text>
