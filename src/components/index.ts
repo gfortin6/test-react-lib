@@ -1,3 +1,5 @@
+export { default as ButtonWithModal } from './ButtonWithModal/ButtonWithModal';
+export { default as CustomToggle } from './CustomToggle/CustomToggle';
 export { default as ErrorPage } from './ErrorPage/ErrorPage';
 export { default as Footer } from './Footer/Footer';
 export { default as Heading } from './Heading/Heading';

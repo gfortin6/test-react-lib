@@ -5,8 +5,6 @@ import Toast from './Toast';
 export default {
   title: 'Toast',
   component: Toast,
-  toastTitle: 'Toast Title',
-  toastBody: 'Toast Body',
 } as ComponentMeta<typeof Toast>;
 
 const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;

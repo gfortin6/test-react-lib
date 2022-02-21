@@ -8,16 +8,6 @@ import SideMenu from '../SideMenu/SideMenu';
 export default {
   title: 'SideMenu',
   component: SideMenu,
-  portalURL: 'http://www.google.ca',
-  isCollapsed: false,
-  isToggled: false,
-  isLoggedIn: false,
-  allowedPages: ['/', '/1'],
-  menuItems: [],
-  onLoggedOut: () => {},
-  onToggleChange: () => {},
-  onCollapseChange: () => {},
-  onLinkClicked: (path: string) => {},
 } as ComponentMeta<typeof SideMenu>;
 
 const Template: ComponentStory<typeof SideMenu> = (args) => (

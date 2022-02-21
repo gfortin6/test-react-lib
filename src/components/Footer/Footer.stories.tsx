@@ -5,7 +5,6 @@ import Footer from './Footer';
 export default {
   title: 'Footer',
   component: Footer,
-  isMenuCollapsed: false,
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
