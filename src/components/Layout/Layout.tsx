@@ -12,7 +12,7 @@ export interface LayoutProps {
   isLoading: boolean;
   isAlertToShow: boolean;
   alertHeader: string;
-  alertMessage?: string | undefined;
+  alertMessage: string;
   alertVariant: UIVariant;
   topNavBar: TopNavBarProps;
   sideMenu?: SideMenuProps;
@@ -67,7 +67,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
       {props.isLoading && <Loading />}
 
       <main>
-        {!props.sideMenu && props.children}
+        {!props.sideMenu && (
+          <div className="layout-container">
+            <div className="layout-content-right">{props.children}</div>
+          </div>
+        )}
         {props.sideMenu && (
           <div className="layout-container">
             <div className="layout-content-left">

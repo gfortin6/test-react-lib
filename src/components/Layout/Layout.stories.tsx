@@ -35,6 +35,7 @@ NoSideBar.args = {
       path: ADSLogo,
       alt: 'ADS logo',
     },
+    onBackHome: () => {},
   },
   children: <H1 text="Layout content" level="1" />,
 };
@@ -54,6 +55,7 @@ WithSideBar.args = {
       path: ADSLogo,
       alt: 'ADS logo',
     },
+    onBackHome: () => {},
     onToggleClicked: () => {},
   },
   sideMenu: {

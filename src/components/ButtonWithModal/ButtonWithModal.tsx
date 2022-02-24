@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { UIVariant } from '../../enums/UIVariant';
 
 export interface ButtonWithModalProps {
   variant?: string;
   disabled?: boolean;
-  buttonText: any;
+  buttonText: ReactNode | string;
   modalTitle: string;
   modalText: string;
   closeButtonText?: string;

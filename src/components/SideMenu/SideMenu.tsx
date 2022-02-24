@@ -1,6 +1,5 @@
 // import { UIPath } from 'enums/UIPath';
 import React from 'react';
-import { ExternalLink } from 'react-external-link';
 import { BsBackspace } from 'react-icons/bs';
 import { FiArrowLeftCircle, FiArrowRightCircle, FiLogOut } from 'react-icons/fi';
 import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu } from 'react-pro-sidebar';
@@ -23,6 +22,10 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
   }
   function handleCollapseChange() {
     props.onCollapseChange();
+  }
+
+  function handleBackToPortal() {
+    window.location.href = props.portalURL;
   }
 
   function isAuthorized(allowedPages: string[], validatePage: string[]) {
@@ -107,9 +110,8 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
-              <MenuItem icon={<BsBackspace />}>
+              <MenuItem icon={<BsBackspace />} onClick={handleBackToPortal}>
                 Back to portal
-                <ExternalLink href={props.portalURL} />
               </MenuItem>
               <MenuItem icon={<FiLogOut />} onClick={handleLogout}>
                 Logout

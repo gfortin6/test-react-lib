@@ -9,7 +9,7 @@ const Toast: React.FC<ToastProps> = ({ toastTitle, toastBody }) => {
   return (
     <div>
       <h4>{toastTitle}</h4>
-      {toastBody ? <p>{toastBody}</p> : ''}
+      <p>{toastBody}</p>
     </div>
   );
 };

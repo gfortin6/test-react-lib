@@ -16,7 +16,7 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
     <header>
       <Navbar className="bgDark navTop">
         {/* <LinkContainer to="/"> */}
-        <Navbar.Brand>
+        <Navbar.Brand onClick={props.onBackHome} className="clickable">
           <Image path={props.brandLogo.path} alt={props.brandLogo.alt} />
         </Navbar.Brand>
         {/* </LinkContainer> */}
