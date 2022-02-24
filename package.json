@@ -1,6 +1,6 @@
 {
   "name": "@gfortin6/test-react-lib",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "ADS React component Library",
   "scripts": {
     "rollup": "rollup -c",
