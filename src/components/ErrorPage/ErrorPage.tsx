@@ -8,6 +8,7 @@ export interface ErrorPageProps {
   errorTitle: string;
   errorMessage: string;
   onGoHome: () => void;
+  onGoPortal: () => void;
 }
 
 const ErrorPage: React.FC<ErrorPageProps> = (props) => {
@@ -17,6 +18,10 @@ const ErrorPage: React.FC<ErrorPageProps> = (props) => {
 
   function goToHome() {
     props.onGoHome();
+  }
+
+  function goToPortal() {
+    props.onGoPortal();
   }
 
   return (
@@ -30,6 +35,12 @@ const ErrorPage: React.FC<ErrorPageProps> = (props) => {
             {props.code === 500 && (
               <Button variant={UIVariant.PRIMARY} onClick={refreshPage}>
                 Refresh the page
+              </Button>
+            )}
+
+            {props.code === 401 && (
+              <Button variant={UIVariant.PRIMARY} onClick={goToPortal}>
+                Back to Portal
               </Button>
             )}
 
