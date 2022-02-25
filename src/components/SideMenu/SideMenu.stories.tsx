@@ -27,6 +27,7 @@ MenuOpen.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };
 
 export const MenuOpenWithSubMenu = Template.bind({});
@@ -49,6 +50,7 @@ MenuOpenWithSubMenu.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };
 
 export const MenuOpenWithNotAuthorized = Template.bind({});
@@ -66,6 +68,7 @@ MenuOpenWithNotAuthorized.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };
 
 export const MenuOpenWithSubMenuNotAuthorized = Template.bind({});
@@ -92,6 +95,7 @@ MenuOpenWithSubMenuNotAuthorized.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };
 
 export const MenuCollapsed = Template.bind({});
@@ -105,6 +109,7 @@ MenuCollapsed.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };
 
 export const MenuCollapsedWithSubMenu = Template.bind({});
@@ -127,4 +132,5 @@ MenuCollapsedWithSubMenu.args = {
   onToggleChange: () => {},
   onCollapseChange: () => {},
   onLinkClicked: (path: string) => {},
+  onBackToPortalClicked: () => {},
 };

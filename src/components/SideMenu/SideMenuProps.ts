@@ -10,5 +10,6 @@ interface SideMenuProps {
   onToggleChange: () => void;
   onCollapseChange: () => void;
   onLinkClicked: (path: string) => void;
+  onBackToPortalClicked: () => void;
 }
 export default SideMenuProps;

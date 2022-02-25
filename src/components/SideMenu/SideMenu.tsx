@@ -25,7 +25,7 @@ const SideMenu: React.FC<SideMenuProps> = (props) => {
   }
 
   function handleBackToPortal() {
-    window.location.href = props.portalURL;
+    props.onBackToPortalClicked();
   }
 
   function isAuthorized(allowedPages: string[], validatePage: string[]) {
