@@ -1,6 +1,6 @@
 {
   "name": "@gfortin6/test-react-lib",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "ADS React component Library",
   "scripts": {
     "rollup": "rollup -c",
@@ -94,6 +94,10 @@
     "*.{json,css,md}": "prettier --write"
   },
   "dependencies": {
+    "@types/react-datepicker": "^4.3.4",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "react-datepicker": "^4.7.0",
     "storybook-addon-state": "^1.0.3"
   }
 }

@@ -7,6 +7,7 @@ export interface CustomToggleProps {
 }
 
 function CustomToggle({ children, eventKey }: CustomToggleProps) {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   const decoratedOnClick = useAccordionButton(eventKey, () => {});
 
   return <div onClick={decoratedOnClick}>{children}</div>;

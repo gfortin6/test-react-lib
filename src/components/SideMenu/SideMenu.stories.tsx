@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
