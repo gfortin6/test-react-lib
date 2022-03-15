@@ -1,6 +1,8 @@
+export { default as ButtonSubmitAndClear } from './ButtonSubmitAndClear/ButtonSubmitAndClear';
 export { default as ButtonWithModal } from './ButtonWithModal/ButtonWithModal';
 export { default as CustomToggle } from './CustomToggle/CustomToggle';
 export { default as ErrorPage } from './ErrorPage/ErrorPage';
+export { default as FilterDates } from './FilterDates/FilterDates';
 export { default as Footer } from './Footer/Footer';
 export { default as Heading } from './Heading/Heading';
 export { default as Image } from './Image/Image';
