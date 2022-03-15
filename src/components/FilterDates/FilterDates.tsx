@@ -37,7 +37,7 @@ const FilterDates: React.FC<FilterDatesProps> = (props) => {
       props.onChangeDateTo(defaultDateTo?.toISOString());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultDateFrom, defaultDateTo]);
+  }, [isDefaultDateFrom, isDefaultDateTo]);
 
   function defaultDateHandler(event: React.MouseEvent<HTMLButtonElement>) {
     const btnId = event.currentTarget.id;
