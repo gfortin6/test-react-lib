@@ -11,6 +11,8 @@ export interface FilterDatesProps {
   isDefaultDateTo: boolean;
   onChangeDateFrom: (date: string | undefined) => void;
   onChangeDateTo: (date: string | undefined) => void;
+  onChangeDefaultDateFrom: (isDefaultDateFrom: boolean) => void;
+  onChangeDefaultDateTo: (isDefaultDateTo: boolean) => void;
 }
 
 const BTN_DEFAULT_DATE_FROM_ID = 'btnDefaultDateFrom';
@@ -20,34 +22,31 @@ const DATE_FORMAT = 'yyyy-MM-dd';
 const FilterDates: React.FC<FilterDatesProps> = (props) => {
   const [dateFrom, setDateFrom] = useState<Date>();
   const [dateTo, setDateTo] = useState<Date>();
-  const [isDefaultDateFrom, setIsDefaultDateFrom] = useState(props.isDefaultDateFrom);
-  const [isDefaultDateTo, setIsDefaultDateTo] = useState(props.isDefaultDateTo);
 
   const defaultDateFrom = props.defaultDateFrom ? new Date(props.defaultDateFrom + 'T00:00:00') : undefined;
   const defaultDateTo = props.defaultDateTo ? new Date(props.defaultDateTo + 'T00:00:00') : undefined;
 
   useEffect(() => {
-    if (isDefaultDateFrom) {
+    if (props.isDefaultDateFrom) {
       setDateFrom(defaultDateFrom);
       props.onChangeDateFrom(defaultDateFrom?.toISOString());
     }
-
-    if (isDefaultDateTo) {
+    if (props.isDefaultDateTo) {
       setDateTo(defaultDateTo);
       props.onChangeDateTo(defaultDateTo?.toISOString());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isDefaultDateFrom, isDefaultDateTo]);
+  }, [props.isDefaultDateFrom, props.isDefaultDateTo]);
 
   function defaultDateHandler(event: React.MouseEvent<HTMLButtonElement>) {
     const btnId = event.currentTarget.id;
     if (btnId === BTN_DEFAULT_DATE_FROM_ID) {
       setDateFrom(defaultDateFrom);
-      setIsDefaultDateFrom(true);
+      props.onChangeDefaultDateFrom(true);
       props.onChangeDateFrom(defaultDateFrom?.toISOString());
     } else if (btnId === BTN_DEFAULT_DATE_TO_ID) {
       setDateTo(defaultDateTo);
-      setIsDefaultDateTo(true);
+      props.onChangeDefaultDateTo(true);
       props.onChangeDateTo(defaultDateTo?.toISOString());
     }
   }
@@ -58,13 +57,13 @@ const FilterDates: React.FC<FilterDatesProps> = (props) => {
     if (dateTo && date > dateTo) {
       handleChangeDateTo(date);
     }
-    setIsDefaultDateFrom(false);
+    props.onChangeDefaultDateFrom(false);
     props.onChangeDateFrom(date.toISOString());
   }
 
   function handleChangeDateTo(date: Date) {
     setDateTo(date);
-    setIsDefaultDateTo(false);
+    props.onChangeDefaultDateTo(false);
     props.onChangeDateTo(date.toISOString());
   }
 
