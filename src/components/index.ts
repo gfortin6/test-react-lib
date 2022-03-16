@@ -1,5 +1,6 @@
 export { default as ButtonSubmitAndClear } from './ButtonSubmitAndClear/ButtonSubmitAndClear';
 export { default as ButtonWithModal } from './ButtonWithModal/ButtonWithModal';
+export { default as CardWithSub } from './CardWithSub/CardWithSub';
 export { default as CustomToggle } from './CustomToggle/CustomToggle';
 export { default as ErrorPage } from './ErrorPage/ErrorPage';
 export { default as FilterDates } from './FilterDates/FilterDates';
