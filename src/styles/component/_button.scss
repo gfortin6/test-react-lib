@@ -1,0 +1,30 @@
+.btn-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.custom-btn {
+  width: 100%;
+  padding: 0.75em 0 !important;
+}
+
+.custom-btn-top {
+  margin-top: 1.5em;
+}
+
+.custom-btn-bottom {
+  margin-top: 0.75em;
+}
+
+@media only screen and (max-width: 1268px) {
+  .btn-container {
+    justify-content: flex-start;
+  }
+}
+@media only screen and (max-width: 772px) {
+  .custom-btn {
+    min-width: 100px;
+    padding: 0.75em 1em !important;
+  }
+}

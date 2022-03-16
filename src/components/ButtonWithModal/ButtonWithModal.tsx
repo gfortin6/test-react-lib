@@ -3,6 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { UIVariant } from '../../enums/UIVariant';
 
 export interface ButtonWithModalProps {
+  className?: string;
   variant?: string;
   disabled?: boolean;
   buttonText: ReactNode | string;
@@ -31,7 +32,12 @@ const ButtonWithModal: React.FC<ButtonWithModalProps> = (props) => {
 
   return (
     <>
-      <Button variant={props.variant || UIVariant.PRIMARY} onClick={handleShow} disabled={props.disabled}>
+      <Button
+        className={props.className}
+        variant={props.variant || UIVariant.PRIMARY}
+        onClick={handleShow}
+        disabled={props.disabled}
+      >
         {props.buttonText}
       </Button>
       <Modal show={show} onHide={handleCloseButton}>
