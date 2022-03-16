@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { UIVariant } from '../../enums/UIVariant';
+import '../../styles/component/button.scss';
 
 export interface ButtonWithModalProps {
   className?: string;

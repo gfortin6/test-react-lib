@@ -3,6 +3,7 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { UIVariant } from '../../enums';
+import '../../styles/component/filter-dates.scss';
 
 export interface FilterDatesProps {
   defaultDateFrom?: string;

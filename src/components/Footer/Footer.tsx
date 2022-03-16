@@ -13,13 +13,13 @@ const Footer: React.FC<FooterProps> = (props) => {
         {props.isMenuCollapsed && (
           <>
             <p className="text-center footer-copyright">© ADS</p>
-            <p className="text-center footer-copyright">2021</p>
+            <p className="text-center footer-copyright">2022</p>
           </>
         )}
         {!props.isMenuCollapsed && (
           <>
             <p className="text-center footer-copyright">© Automotive Data Solutions.</p>
-            <p className="text-center footer-copyright">All Rights Reserved. 2021</p>
+            <p className="text-center footer-copyright">All Rights Reserved. 2022</p>
           </>
         )}
       </div>
