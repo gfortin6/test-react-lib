@@ -10,6 +10,8 @@ export interface FilterDatesProps {
   defaultDateTo?: string;
   isDefaultDateFrom: boolean;
   isDefaultDateTo: boolean;
+  dateFromErrorMessage?: string;
+  dateToErrorMessage?: string;
   onChangeDateFrom: (date: string | undefined) => void;
   onChangeDateTo: (date: string | undefined) => void;
   onChangeDefaultDateFrom: (isDefaultDateFrom: boolean) => void;
@@ -97,6 +99,7 @@ const FilterDates: React.FC<FilterDatesProps> = (props) => {
           maxDate={new Date()}
           placeholderText="YYYY-MM-DD"
         />
+        {props.dateFromErrorMessage && <p className="dropdown-error-message">{props.dateFromErrorMessage}</p>}
       </Form.Group>
 
       {/* Date to */}
@@ -127,6 +130,7 @@ const FilterDates: React.FC<FilterDatesProps> = (props) => {
           maxDate={new Date()}
           placeholderText="YYYY-MM-DD"
         />
+        {props.dateToErrorMessage && <p className="dropdown-error-message">{props.dateToErrorMessage}</p>}
       </Form.Group>
     </>
   );
